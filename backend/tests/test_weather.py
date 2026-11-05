@@ -36,7 +36,7 @@ class WeatherTests(unittest.TestCase):
     @patch('app.graph.search_cities',new_callable=AsyncMock)
     @patch('app.weather.fetch_forecast',new_callable=AsyncMock,return_value=WEATHER)
     def test_assistant_help_uses_knowledge_without_weather_requests(self,fetch,search):
-        for message in ('你能干什么','你有哪些功能？','你好','怎么使用天气助手'):
+        for message in ('你能干什么','你能干啥','你能干嘛？','你能做啥','你有啥功能','你有哪些功能？','你好','怎么使用天气助手'):
             for city in (None,CITIES[0].model_dump()):
                 with self.subTest(message=message,city=city):
                     data = self.client.post('/api/chat',json={'message':message,'city':city}).json()
