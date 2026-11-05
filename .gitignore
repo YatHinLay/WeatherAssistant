@@ -1,0 +1,14 @@
+.venv/
+.uv-cache/
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+.idea/
+.pytest_cache/
+*.log
+
+.npm-cache/
+
+.native-backup*/
